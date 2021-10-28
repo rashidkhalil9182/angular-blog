@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PaginationComponent } from '../pagination/pagination.component';
 import { SpinnerComponent } from '../spinner/spinner.component';
 import { NgbdSortableHeader } from '../directive/sortable.directive';
-import { TableService } from '../service/table.service';
+
 
 
 

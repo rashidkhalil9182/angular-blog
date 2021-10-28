@@ -8,7 +8,7 @@ import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PaginationComponent } from './shared/pagination/pagination.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
-import { TableService } from './shared/service/table.service';
+
 import { DecimalPipe } from '@angular/common';
 
 @NgModule({
@@ -22,7 +22,7 @@ import { DecimalPipe } from '@angular/common';
     NgbModule,
     HttpClientModule
   ],
-  providers: [TableService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
