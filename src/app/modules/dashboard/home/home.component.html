@@ -1,0 +1,101 @@
+<div class="jumbotron jumbotron-fluid banner-home">
+    <div class="container">
+        <p class="lead">Welcome to</p>
+        <h1>My App</h1>
+
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 p-2">
+            <div class="card">
+                <div class="card-header">
+                    Statistics
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4 p-1">
+                            <h5 class="d-inline-block stat-count">123</h5>
+                            <span class="stat-title">Posts</span>
+                        </div>
+                        <div class="col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4  p-1">
+                            <h5 class="d-inline-block stat-count">12</h5>
+                            <span class="stat-title">Albums</span>
+                        </div>
+                        <div class="col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4  p-1">
+                            <h5 class="d-inline-block stat-count">1,234</h5>
+                            <span class="stat-title">Photos</span>
+                        </div>
+                    </div>
+                    <!-- <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 p-2">
+            <spinner [visible]="postLoading"></spinner>
+            <div class="card">
+                <div class="card-header">
+                    Latest Post
+                </div>
+                <div class="card">
+                    <div class="card-body c-body posts">
+
+
+                        <ng-container>
+                            <ul class="ba p-0">
+                                <li *ngFor="let post of posts">
+                                    <a class="elipses" [routerLink]="['/posts', post.id]">{{ post.title }}</a>
+
+                                    <p class="elipses">{{ post.body }}</p>
+                                </li>
+                            </ul>
+                        </ng-container>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 p-2">
+            <spinner [visible]="postLoading"></spinner>
+            <div class="card">
+                <div class="card-header">
+                    Recent Photos
+                </div>
+                <div class="card">
+                    <div class="card-body c-body posts">
+
+
+                        <ng-container>
+                            <div class="row">
+                                <ng-container *ngFor="let photo of photos">
+                                    <div class="col-md-4">
+                                        <ul class="ba p-0">
+                                            <li>
+
+                                                <img class="img-responsive photo-img" src="{{ photo.thumbnailUrl }}"
+                                                    alt="" />
+                                                <a class="elipses" routerLink="">{{ photo.title }}</a>
+                                                <!-- <div class="elipses">
+                                                    {{ photo.title }}
+                                                </div> -->
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </ng-container>
+
+                            </div>
+
+                        </ng-container>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

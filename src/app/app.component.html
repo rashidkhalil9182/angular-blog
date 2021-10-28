@@ -1,0 +1,16 @@
+<div class="d-flex" id="wrapper">
+
+  <app-side-bar></app-side-bar>
+  <div id="page-content-wrapper">
+    <nav *ngIf="count >1" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <ng-container *ngFor="let breadLink of breadcrumbList;let last = last;">
+          <li *ngIf="breadLink!='/'" class="breadcrumb-item">
+            <a *ngIf="!last" href="javascript:void(0)" class="t-upper" [routerLink]="breadLink">{{breadLink}} </a>
+            <a *ngIf="last" href="javascript:void(0)" class="t-upper">{{breadLink}} </a>
+          </li>
+        </ng-container>
+      </ol>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>

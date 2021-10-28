@@ -1,0 +1,17 @@
+<!-- Sidebar -->
+<div class="bg-light border-right" id="sidebar-wrapper" [ngClass]="status ? 'hide' : 'show'">
+    <div class="sidebar-heading">My App </div>
+    <div class="list-group list-group-flush">
+        <a routerLink="/dashboard" routerLinkActive="bg-blue"
+            class="list-group-item list-group-item-action bg-light">Dashboard</a>
+        <a routerLink="/posts" routerLinkActive="bg-blue"
+            class="list-group-item list-group-item-action bg-light">Posts</a>
+        <a routerLink="/albums" routerLinkActive="bg-blue"
+            class="list-group-item list-group-item-action bg-light">Albums</a>
+        <a routerLink="/photos" routerLinkActive="bg-blue"
+            class="list-group-item list-group-item-action bg-light">Photos</a>
+        <a routerLink="/users" routerLinkActive="bg-blue"
+            class="list-group-item list-group-item-action bg-light">Users</a>
+    </div>
+</div>
+<!-- /#sidebar-wrapper -->

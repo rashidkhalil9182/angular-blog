@@ -1,0 +1,16 @@
+<div class="container-fluid p-5">
+    <div class="row">
+        <spinner [visible]="photoLoading"></spinner>
+        <div class="col-12">
+            <h1>{{photoDetail?.title}}</h1>
+            <a class="elipses" [routerLink]="['/albums', photoDetail.albumId]"> View Album</a>
+            <div class="card text-center b-none">
+                <div class="card-body p-0">
+                    <img class="card-img-top c-img" src="{{ photoDetail.thumbnailUrl }}" alt="Card image cap">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="container-fluid p-5">
+    <spinner [visible]="postsLoading"></spinner>
+    <div class="row">
+        <h1>Posts</h1>
+
+        <form [formGroup]="filterForm">
+
+            <div class="form-group form-inline">
+                <input formControlName="search" class="form-control ml-2" type="text" name="searchTerm"
+                    placeholder="Search" (input)="onChange()" />
+
+                <select class="ml-5 form-control" #u (change)="updateFilter({userId: u.value})" placeholder="User"
+                    formControlName="user_id">
+                    <option [value]="0">Select a User</option>
+                    <option *ngFor="let user of users" value="{{user.id}}">{{user.name}}</option>
+                </select>
+                <!-- <span class="ml-3" *ngIf="service.loading$ | async">Loading...</span> -->
+            </div>
+            <div>
+
+                <table class="table  table-bordered">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col" sortable="title" (sort)="onSort($event)">Title
+                            </th>
+                            <th scope="col" sortable="body" (sort)="onSort($event)">Body</th>
+                            <!-- <th scope="col" sortable="population" (sort)="onSort($event)">Population</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let post of pagedPosts">
+                            <th scope="row">{{ post.id }}</th>
+                            <td>
+                                <!-- <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + post?.flag" class="mr-2"
+                        style="width: 20px"> -->
+
+                                <a [routerLink]="['/posts', post.id]" class="elipses" routerLink="">{{ post.title
+                                    }}</a>
+                                <!-- <ngb-highlight [result]="country.name" [term]="service.searchTerm"></ngb-highlight> -->
+                            </td>
+                            <td>
+                                {{post.body}}
+                                <!-- <ngb-highlight [result]="country.area | number" [term]="service.searchTerm"></ngb-highlight> -->
+                            </td>
+                            <!-- <td>
+                    <ngb-highlight [result]="country.population | number" [term]="service.searchTerm"></ngb-highlight>
+                </td> -->
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="d-flex justify-content-between p-2">
+                    <ngb-pagination [collectionSize]="total" [(page)]="page" [pageSize]="pageSize"
+                        [boundaryLinks]="true" (pageChange)="onPageChanged($event)">
+                    </ngb-pagination>
+
+                    <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="pageSize"
+                        (change)="pageSizeChange()" [ngModelOptions]="{standalone: true}">
+                        <option [ngValue]="20">20 items per page</option>
+                        <option [ngValue]="40">40 items per page</option>
+                        <option [ngValue]="50">50 items per page</option>
+                        <option [ngValue]="60">60 items per page</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

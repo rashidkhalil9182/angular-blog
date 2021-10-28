@@ -1,0 +1,33 @@
+.bg-blue{
+    background-color: #2980b9;
+}
+
+.txt,.line{
+     color: #7fc5e6; 
+    //  padding:10px;
+}
+ 
+.line:before{
+    content:"\00a0\00a0\00a0\00a0\00a0";
+    text-decoration:line-through;
+ color: #7fc5e6; 
+ padding:10px;
+}
+
+ .c-body{
+   background-color: #f8f9fa
+}
+
+ul.ba {
+    list-style-type: none;
+}
+
+.posts{
+    height: 460px;
+    overflow-y: auto;
+}
+
+
+ .album-link{
+     line-height: 3;
+ }
